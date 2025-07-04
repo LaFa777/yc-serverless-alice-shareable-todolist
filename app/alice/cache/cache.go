@@ -6,9 +6,9 @@ import (
 	"github.com/yandex-cloud/examples/serverless/alice-shareable-todolist/app/errors"
 )
 
-type Supplier = func() (interface{}, errors.Err)
+type Supplier = func() (any, errors.Err)
 
-func GetCachedForRequest(ctx context.Context, key interface{}, supplier Supplier) (interface{}, errors.Err) {
+func GetCachedForRequest(ctx context.Context, key any, supplier Supplier) (any, errors.Err) {
 	ctxValue := ctx.Value(cacheCtxKey{})
 	if ctxValue == nil {
 		return supplier()
@@ -22,10 +22,10 @@ func ContextWithCache(ctx context.Context) context.Context {
 }
 
 type cache struct {
-	values map[interface{}]interface{}
+	values map[any]any
 }
 
-func (c *cache) getCached(key interface{}, supplier Supplier) (interface{}, errors.Err) {
+func (c *cache) getCached(key any, supplier Supplier) (any, errors.Err) {
 	if res, ok := c.values[key]; ok {
 		return res, nil
 	}
@@ -34,7 +34,7 @@ func (c *cache) getCached(key interface{}, supplier Supplier) (interface{}, erro
 		return nil, err
 	}
 	if c.values == nil {
-		c.values = make(map[interface{}]interface{})
+		c.values = make(map[any]any)
 	}
 	c.values[key] = res
 	return res, nil

@@ -7,7 +7,6 @@ import (
 	aliceapi "github.com/yandex-cloud/examples/serverless/alice-shareable-todolist/app/alice/api"
 	"github.com/yandex-cloud/examples/serverless/alice-shareable-todolist/app/alice/text"
 	"github.com/yandex-cloud/examples/serverless/alice-shareable-todolist/app/errors"
-	"github.com/yandex-cloud/examples/serverless/alice-shareable-todolist/app/model"
 	"github.com/yandex-cloud/examples/serverless/alice-shareable-todolist/app/todolist"
 )
 
@@ -55,21 +54,4 @@ func (h *Handler) addItemScenario(ctx context.Context, req *aliceapi.Req) (*alic
 	return &aliceapi.Resp{
 		Text: fmt.Sprintf("Готово, добавила \"%s\" в \"%s\"", itemText, aclEntry.Alias),
 	}, nil
-}
-
-func (h *Handler) findListByName(acl []*model.ACLEntry, name string) *model.ACLEntry {
-	idx, ok := text.BestMatch(name, text.ACLMatcher(acl))
-	if ok {
-		return acl[idx]
-	}
-	return nil
-}
-
-func nonEmpty(ss ...string) string {
-	for _, s := range ss {
-		if s != "" {
-			return s
-		}
-	}
-	return ""
 }

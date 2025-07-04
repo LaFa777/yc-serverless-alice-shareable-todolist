@@ -92,7 +92,7 @@ func (h *Handler) doAddItem(ctx context.Context, action *addItemAction) (*alicea
 		if entry == nil {
 			return &aliceapi.Response{
 				Response: &aliceapi.Resp{
-					Text: fmt.Sprintf("Я не нашла у вас список \"%\"", action.listName),
+					Text: fmt.Sprintf("Я не нашла у вас список \"%s\"", action.listName),
 				},
 			}, nil
 		}

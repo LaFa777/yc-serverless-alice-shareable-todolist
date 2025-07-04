@@ -28,6 +28,15 @@ type service struct {
 }
 
 func (s *service) AuthenticateAlice(ctx context.Context, req *aliceapi.Request) (context.Context, errors.Err) {
+	if req == nil {
+		return ctx, errors.NewBadRequest("request is nil")
+	}
+	if req.Session == (aliceapi.Session{}) {
+		return ctx, errors.NewUnauthenticated()
+	}
+	if req.Session.User == nil {
+		return ctx, errors.NewUnauthenticated()
+	}
 	if req.Session.User.Token == "" {
 		return ctx, errors.NewUnauthenticated()
 	}

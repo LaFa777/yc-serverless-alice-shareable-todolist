@@ -102,7 +102,7 @@ func (h *Handler) doDeleteItem(ctx context.Context, action *deleteItemAction) (*
 		if entry == nil {
 			return &aliceapi.Response{
 				Response: &aliceapi.Resp{
-					Text: fmt.Sprintf("Я не нашла у вас список \"%\"", action.listName),
+					Text: fmt.Sprintf("Я не нашла у вас список \"%s\"", action.listName),
 				},
 			}, nil
 		}

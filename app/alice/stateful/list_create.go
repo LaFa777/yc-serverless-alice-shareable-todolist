@@ -29,7 +29,7 @@ func (h *Handler) createFromScratch(ctx context.Context, req *aliceapi.Request) 
 	if ok {
 		action.name = name
 	}
-	return h.doCreate(ctx, &createAction{name: name})
+	return h.doCreate(ctx, &action)
 }
 
 func (h *Handler) createRequireName(ctx context.Context, req *aliceapi.Request) (*aliceapi.Response, errors.Err) {

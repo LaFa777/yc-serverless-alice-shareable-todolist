@@ -24,7 +24,7 @@ func initLogging() (context.Context, error) {
 	return log.CtxWithLogger(ctx, logger), nil
 }
 
-func assertInitialized(component interface{}, name string) {
+func assertInitialized(component any, name string) {
 	if component == nil {
 		panic(fmt.Sprintf("%s wasn't initialized before usage", name))
 	}

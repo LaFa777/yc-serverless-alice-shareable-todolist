@@ -121,7 +121,6 @@ func initAliceApp() (*aliceApp, error) {
 		return nil, err
 	}
 	aliceAppInstance.handler, err = stateful.NewHandler(aliceAppInstance)
-	//aliceAppInstance.handler, err = stateless.NewHandler(aliceAppInstance)
 	if err != nil {
 		return nil, err
 	}

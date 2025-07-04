@@ -76,11 +76,13 @@ func (s *service) GetOAuthURL(ctx context.Context, opts ...OAuthOpt) *url.URL {
 	q := make(url.Values)
 	q.Add("response_type", "code")
 	q.Add("client_id", s.oauthClientID)
+
 	if options.redirectURI != nil {
 		options.redirectURI.Scheme = "https"
 		options.redirectURI.Host = s.domain
 		q.Add("redirect_uri", options.redirectURI.String())
 	}
+
 	if options.force {
 		q.Add("force_confirm", "yes")
 	}
@@ -145,7 +147,8 @@ func (s *service) getYandexUser(ctx context.Context, oauthToken string) (*model.
 	}, nil
 }
 
-func (s *service) getOAuthToken(ctx context.Context, code string) (string, errors.Err) {
+// unused ctx, changed to _
+func (s *service) getOAuthToken(_ context.Context, code string) (string, errors.Err) {
 	q := make(url.Values)
 	q.Add("grant_type", "authorization_code")
 	q.Add("code", code)
