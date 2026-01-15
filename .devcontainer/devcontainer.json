@@ -1,0 +1,46 @@
+{
+    "name": "Yandex Cloud Serverless Alice Shareable todolist",
+
+    "build": {
+        "context": "..",
+        "dockerfile": "Dockerfile"
+    },
+    
+    "workspaceFolder": "/workspace",
+
+    
+    "postCreateCommand": "/workspace/.devcontainer/post_create_command.sh",
+
+    "features": {
+        // ── Common Utilities ──────────────────────────────────────────────────────
+        // Общие утилиты (curl, wget, git, vim, nano, etc.)
+        "ghcr.io/devcontainers/features/common-utils:2": {
+            "installOhMyZsh": true,
+            "installOhMyZshConfig": true
+        },
+        "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+            "plugins": "aliases colorize task fzf uv zsh-interactive-cd"
+        },
+        // fuzzy search
+        "ghcr.io/devcontainers-extra/features/fzf:1": {},
+        
+        // project features
+        "ghcr.io/devcontainers/features/go:1": {
+            "version": "1.21"
+        },
+        "ghcr.io/devcontainers/features/node:1": {
+            "version": "22.14"
+        },
+        "ghcr.io/devcontainers/features/terraform:1": {},
+        "ghcr.io/devcontainers/features/aws-cli:1": {},
+        "ghcr.io/devcontainers-extra/features/autoenv:1": {}
+
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "golang.Go"
+            ]
+        }
+    }
+}

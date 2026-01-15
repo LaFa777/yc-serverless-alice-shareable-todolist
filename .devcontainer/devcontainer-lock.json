@@ -1,0 +1,44 @@
+{
+  "features": {
+    "ghcr.io/devcontainers-extra/features/autoenv:1": {
+      "version": "1.0.6",
+      "resolved": "ghcr.io/devcontainers-extra/features/autoenv@sha256:d08812c578f0049373eb642a26c0221d2d18afad8e14a61b90f4c073aa4b550f",
+      "integrity": "sha256:d08812c578f0049373eb642a26c0221d2d18afad8e14a61b90f4c073aa4b550f"
+    },
+    "ghcr.io/devcontainers-extra/features/fzf:1": {
+      "version": "1.0.15",
+      "resolved": "ghcr.io/devcontainers-extra/features/fzf@sha256:dbac92d89862c0f266453772ea0e73089d520ff66544f9c146480677fc2dbf7d",
+      "integrity": "sha256:dbac92d89862c0f266453772ea0e73089d520ff66544f9c146480677fc2dbf7d"
+    },
+    "ghcr.io/devcontainers-extra/features/zsh-plugins:0": {
+      "version": "0.0.5",
+      "resolved": "ghcr.io/devcontainers-extra/features/zsh-plugins@sha256:4dcc8e97307345cff26c2b4dfd840c2947b8b5bb20f492a68bdb9fbe9ccb67ba",
+      "integrity": "sha256:4dcc8e97307345cff26c2b4dfd840c2947b8b5bb20f492a68bdb9fbe9ccb67ba"
+    },
+    "ghcr.io/devcontainers/features/aws-cli:1": {
+      "version": "1.1.2",
+      "resolved": "ghcr.io/devcontainers/features/aws-cli@sha256:bbc9fd513c22e331953126c75ad7b2ed1f9044f1cd5890b7073b634810459b18",
+      "integrity": "sha256:bbc9fd513c22e331953126c75ad7b2ed1f9044f1cd5890b7073b634810459b18"
+    },
+    "ghcr.io/devcontainers/features/common-utils:2": {
+      "version": "2.5.5",
+      "resolved": "ghcr.io/devcontainers/features/common-utils@sha256:6d22e5475de578a8dadf19ce15c0ed09d82d8e3006b851dae7fe59a959c9b787",
+      "integrity": "sha256:6d22e5475de578a8dadf19ce15c0ed09d82d8e3006b851dae7fe59a959c9b787"
+    },
+    "ghcr.io/devcontainers/features/go:1": {
+      "version": "1.3.2",
+      "resolved": "ghcr.io/devcontainers/features/go@sha256:c93a15310238e947d7f336463c1b9cc989ebc165c5ab6dccc03d75530eaced82",
+      "integrity": "sha256:c93a15310238e947d7f336463c1b9cc989ebc165c5ab6dccc03d75530eaced82"
+    },
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "1.6.3",
+      "resolved": "ghcr.io/devcontainers/features/node@sha256:3c35dff2aedeaeb86f03e10c265c29b56a1b3609324d83d6e901dbb6032543a4",
+      "integrity": "sha256:3c35dff2aedeaeb86f03e10c265c29b56a1b3609324d83d6e901dbb6032543a4"
+    },
+    "ghcr.io/devcontainers/features/terraform:1": {
+      "version": "1.4.2",
+      "resolved": "ghcr.io/devcontainers/features/terraform@sha256:250d08e39c99d9e959e091e74527c22c04eeae728b424da99f002423c7902f82",
+      "integrity": "sha256:250d08e39c99d9e959e091e74527c22c04eeae728b424da99f002423c7902f82"
+    }
+  }
+}
